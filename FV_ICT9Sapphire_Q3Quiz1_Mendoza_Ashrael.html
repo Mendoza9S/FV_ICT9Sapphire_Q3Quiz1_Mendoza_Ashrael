@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fun Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .section {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Let's Test Your Brain!</h1>
+    <p>Here are some fun challenges for you. Click the buttons to see the answers!</p>
+
+    <div class="section">
+        <h3>Arithmetic Challenge</h3>
+        <p id="arithmeticDisplay">If a = 20 and b = 5, what is a + b?</p>
+        <button class="btn btn-primary" onclick="showArithmetic()">Reveal Answer</button>
+        <p id="arithmeticResult"></p>
+    </div>
+
+    <div class="section">
+        <h3>Comparison Challenge</h3>
+        <p id="comparisonDisplay">Do you think a is bigger than b?</p>
+        <button class="btn btn-primary" onclick="showComparison()">Reveal Answer</button>
+        <p id="comparisonResult"></p>
+    </div>
+
+    <div class="section">
+        <h3>Logical Challenge</h3>
+        <p id="logicalDisplay">
+            Let's check two things:
+            <br>- Is a greater than b?
+            <br>- Is b less than 10?
+            <br>Are both true?
+        </p>
+        <button class="btn btn-primary" onclick="showLogical()">Reveal Answer</button>
+        <p id="logicalResult"></p>
+    </div>
+
+    <script>
+        var a = 20;
+        var b = 5;
+
+        function showArithmetic() {
+            var result = a + b;
+            document.getElementById("arithmeticResult").innerText = `Answer: a + b equals ${result}.`;
+        }
+
+        function showComparison() {
+            var result = a > b;
+            document.getElementById("comparisonResult").innerText = 
+                `Answer: ${result ? "Yes, a is bigger than b!" : "No, a is not bigger than b."}`;
+        }
+
+        function showLogical() {
+            var condition1 = a > b;
+            var condition2 = b < 10;
+            var result = condition1 && condition2;
+
+            document.getElementById("logicalResult").innerText = 
+                `Answer: ${result ? "Yes, both statements are true!" : "No, one or both statements are false."}`;
+        }
+    </script>
+</body>
+</html>
